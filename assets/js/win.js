@@ -1,27 +1,26 @@
+// winState is essentially your 'game over' screen. Up to you however you want to use it.
 var winState = {
-        // This is the 'game over' state. Optional if you have other
-        // things in mind.
+        
     create: function() {	
-		
+		// Here are some text to display certain information.
 	var winLabel = game.add.text(80, 80, 'YOU WON!',
 								{font: '50px Arial', fill: '#00FF00' });
 
-		// We give the player instructions on how to restart the game
+		// More text for more information. Delete if needed.
 	var startLabel = game.add.text(80, game.world.height-80,
 								   'press the "W" key to restart',
 								   {font: '25px Arial', fill: '#ffffff' });
 
-        // We define the wkey as Phaser.Keyboard.W so that we can act
-        // when the player presses it
+        // Same as previously, we enable to w key for input.
         var wkey = game.input.keyboard.addKey(Phaser.Keyboard.W);
         
-        // When the player presses the W key, we call the restart function
+        // We then call the restart function when w is pressed.
         wkey.onDown.addOnce(this.restart, this);
     },
     
-    // The restart function calls the menu state    
+    // And as usual, we define this function to start (or rather restart) back to the menu state. 
     restart: function () {
         game.state.start('menu');    
     }, 	
-}
+};
 

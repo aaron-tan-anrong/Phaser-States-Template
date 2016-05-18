@@ -1,16 +1,13 @@
-
-// Here we use the 'official name' (bootState) when defining the state
+// We will use the state_name as defined in our game.js previously.
 var bootState = {
     
-    // The create function is a standard Phaser function, and is
-    // automatically called
+    // Nothing to preload here, so we immediately use our create function.
     create: function () {
 		
-        // Starting the physics system - in this case we are using the
-        // simple (but effective) ARCADE physics engine
+        // We just start our physics system here.
         game.physics.startSystem(Phaser.Physics.ARCADE);
         
-        // Calling the load state
+        // And then start our next state.
         game.state.start('load');
     }   
 };

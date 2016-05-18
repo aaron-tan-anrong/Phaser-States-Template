@@ -1,19 +1,14 @@
-// The first two integers are the dimensions of the game screen as x
-// and y values. We are setting it to 640 pixels across, and 480 pixels
-// down. Note also that the 'gameDiv' parameter matches the div element
-// defined in our index.html file 
-var game = new Phaser.Game(640, 480, Phaser.AUTO, 'gameDiv');
+// Same as usual, we will create our Phaser game in the first line here.
+var game = new Phaser.Game(800, 600, Phaser.AUTO, 'gameDiv');
 
-// Here we add each state. We give it a casual name that we use when
-// calling it (i.e. 'boot'), and an official name that we use when 
-// defining it (i.e. bootState), as you'll see in the boot.js file
-game.state.add('boot', bootState);
-game.state.add('load', loadState);
-game.state.add('menu', menuState);
-game.state.add('play', playState);
-game.state.add('win', winState);
+// We then add the states we will use, as below. It is also in order, if you're wondering.
+// game.state.add('ref_key', 'state_name');
+game.state.add('boot', bootState); //bootState is where we will boot up our game. Physics system etc
+game.state.add('load', loadState); // Here is where we will preload our assets.
+game.state.add('menu', menuState); // This is the menu 'page', or intro screen.
+game.state.add('play', playState); // This is the actual game.
+game.state.add('win', winState); // This can be said to be the 'game over' screen.
 
-// After all of the states are added, we start the game by calling the
-// boot state
+// We then start the first state 'boot' after adding all the states we need.
 game.state.start('boot');
 

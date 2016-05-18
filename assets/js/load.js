@@ -1,19 +1,19 @@
+// This is the loading page
 var loadState= {
 	
-	// The preload function is another standard Phaser function that we
-	// use to define and load our assets
+	// We use the function preload to load up our game assets here.
     preload: function() {
         
-        // Add a loading label on the screen
+        // For some loading text on the screen;
         var loadingLabel = game.add.text(80, 150, 'loading...', 
                                          {font: '30px Courier', fill: '#ffffff'});        
         
-        //Load your assets here
+        // Load your assets below
         
     },
     
     create: function() {
-        // Call the menu state
+        // Done? Now we start our menu state.
         game.state.start('menu');
     }    
 };

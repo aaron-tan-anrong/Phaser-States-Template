@@ -1,28 +1,25 @@
+// This is basically the start screen.
 var menuState = {
   
     create: function () {
 		
-		// Here we display the name of the game. When defining text, the
-		// first two parameters are x and y positional values, then the
-		// actual text, and then the 'font' defines the font (of course)
-		// and 'fill' refers to the font color.
+		// Here we create some text for the game title
         var nameLabel = game.add.text(80, 80, 'My First Game',
                                     { font: '50px Arial', fill: '#ffffff' });
         
-        // We give the player instructions on how to start the game
+        // As well as some instructions etc.
         var startLabel = game.add.text(80, game.world.height-80,
                                        'press the "W" key to start',
                                        {font: '25px Arial', fill: '#ffffff' });
         
-        // We define the wkey as Phaser.Keyboard.W so that we can act
-        // when the player presses it
+        // Now we add the W key as an input we can use.
         var wkey = game.input.keyboard.addKey(Phaser.Keyboard.W);
         
-        // When the player presses the W key, we call the start function
+        // So when it is pressed, the 'start' function is called.
         wkey.onDown.addOnce(this.start, this);
     },
     
-    // The start function calls the play state    
+    // Here we define the start function to start our play state.   
     start: function () {
         game.state.start('play');    
     },    
