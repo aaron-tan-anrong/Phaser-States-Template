@@ -1,5 +1,6 @@
 var winState = {
-
+        // This is the 'game over' state. Optional if you have other
+        // things in mind.
     create: function() {	
 		
 	var winLabel = game.add.text(80, 80, 'YOU WON!',
